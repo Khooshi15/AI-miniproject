@@ -1,0 +1,41 @@
+<!doctype html>
+<title>Python Flask</title>
+<!-- <p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p> -->
+<body style="background-color:antiquewhite", align="center">
+<h1>Object Detection using Deep Learning and Computer Vision</h1>
+{% if filename %}
+<h3 >Input Image</h3>
+	<div>
+		<img src="{{ url_for('display_image', filename=filename) }}">
+	</div>
+{% endif %}
+
+{% if imgfile %}
+<div>
+  <h3 >Output Image</h3>
+  <img src="{{ url_for('static',filename='object-detection.jpg') }}", alt="output image">
+</div>
+{% endif %}
+<h2>Select a file to upload</h2>
+<form method="post" action="/" enctype="multipart/form-data">
+    <dl>
+		<p>
+			<input type="file" name="file" autocomplete="off" required>
+		</p>
+    </dl>
+    <p>
+		<input type="submit" value="Submit">
+	</p>
+</form></body>
+</html>
+
